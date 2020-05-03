@@ -1,0 +1,14 @@
+LINEBOT
+x CakePHP4
+postgreSQL(by heroku)
+heroku - github
+sqlite3でもいいや　やる
+herokuでそこそこ動いたら切り替える
+
+LINEBOTAppを見てlineBotのテンプレートをさくっと書く
+https://developers.line.biz/ja/docs/messaging-api/overview/
+
+
+
+任意の有効期間を指定できるチャネルアクセストークン（チャネルアクセストークンv2.1）
+というのがある。後回し。

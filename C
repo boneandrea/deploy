@@ -1,0 +1,27 @@
+phpenv update
+phpenv versions
+phpenv install -l
+phpenv install 7.4.4
+sudo apt install libkrb5-dev -y
+sudo apt install libsqlite3-dev -y
+sudo apt install libcurl4-openssl-dev
+sudo apt install libjpeg-dev libpng-dev -y
+sudo apt install oniguruma-dev -y
+sudo apt install libonig-dev -y
+sudo apt install libtidy-dev -y
+sudo apt install libxslt-dev
+sudo apt install libzip-dev
+phpenv install 7.4.4
+phpenv versions
+phpenv local 7.4.4
+ll ~/.anyenv/envs/phpenv/
+which phpenv
+
+vi ~/.anyenv/envs/phpenv/plugins/php-build/share/php-build/default_configure_options
+phpenv install 7.4.4
+sudo apt install libpq-dev
+phpenv install 7.4.4
+phpenv local 7.4.4
+php -v
+rehash
+php -v
