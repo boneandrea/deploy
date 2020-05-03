@@ -18,16 +18,17 @@ class HogesController extends AppController
      */
     public function index()
     {
-        $hoges = $this->paginate($this->Hoges);
+        $this->log("hoge");
+		$hoges = $this->paginate($this->Hoges);
 
         $this->set(compact('hoges'));
 		error_log(print_r($this->getRequest(), true));
 
-		$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(env("LINE_BOT_ACCESS_TOKEN"));
-		$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => env("LINE_BOT_SECRET")]);
+		// $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(env("LINE_BOT_ACCESS_TOKEN"));
+		// $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => env("LINE_BOT_SECRET")]);
 
-		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
-		$bot->pushMessage($to, $textmessagebuilder);
+		// $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+		// $bot->pushMessage($to, $textmessagebuilder);
     }
 
     /**
