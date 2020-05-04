@@ -340,12 +340,17 @@ return [
             'levels' => ['notice', 'info', 'debug'],
         ],
         'error' => [
-            'className' => FileLog::class,
-            'path' => LOGS,
-            'file' => 'error',
-            'url' => env('LOG_ERROR_URL', null),
-            'scopes' => false,
-            'levels' => ['warning', 'error', 'critical', 'alert', 'emergency'],
+
+			'className' => 'Cake\Log\Engine\ConsoleLog',
+			'stream' => 'php://stderr',
+			'levels' => ['warning', 'error', 'critical', 'alert', 'emergency'],
+
+			// 'className' => FileLog::class,
+			// 'path' => LOGS,
+            // 'file' => 'error',
+            // 'url' => env('LOG_ERROR_URL', null),
+            // 'scopes' => false,
+            // 'levels' => ['warning', 'error', 'critical', 'alert', 'emergency'],
         ],
         // To enable this dedicated query log, you need set your datasource's log flag to true
         'queries' => [
