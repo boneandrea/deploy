@@ -20,7 +20,9 @@ class HogesController extends AppController
     {
 		error_log(print_r($this->getRequest(), true));
 		error_log(print_r($this->getRequest()->getData("events"), true));
-		error_log(print_r($this->getRequest()->getParsedBody(), true));
+		$json=file_get_contents("php://input");
+		error_log($json);
+		error_log(print_r(json_decode($json, true), true));
 
 		$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(env("LINE_BOT_ACCESS_TOKEN"));
 		$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => env("LINE_BOT_SECRET")]);
