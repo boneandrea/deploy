@@ -19,9 +19,11 @@ class HogesController extends AppController
     public function index()
     {
 		error_log(print_r($this->getRequest(), true));
-		error_log(print_r($this->getRequest()->getData(), true));
+		error_log(print_r($this->getRequest()->getData("events"), true));
 		error_log(print_r($this->getRequest()->getParsedBody(), true));
 
+		$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(env("LINE_BOT_ACCESS_TOKEN"));
+		$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => env("LINE_BOT_SECRET")]);
 
 		return $this->response = $this->response->withStatus(200);
 
@@ -31,8 +33,6 @@ class HogesController extends AppController
 
         // $this->set(compact('hoges'));
 
-		// $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(env("LINE_BOT_ACCESS_TOKEN"));
-		// $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => env("LINE_BOT_SECRET")]);
 
 		// $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
 		// $bot->pushMessage($to, $textmessagebuilder);
