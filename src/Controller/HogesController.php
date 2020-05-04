@@ -18,12 +18,12 @@ class HogesController extends AppController
      */
     public function index()
     {
+		error_log(print_r($this->getRequest(), true));
 		$this->log(env('DATABASE_URL', "not set"));
         $this->log("hoge");
 		$hoges = $this->paginate($this->Hoges);
 
         $this->set(compact('hoges'));
-		error_log(print_r($this->getRequest(), true));
 
 		// $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(env("LINE_BOT_ACCESS_TOKEN"));
 		// $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => env("LINE_BOT_SECRET")]);
