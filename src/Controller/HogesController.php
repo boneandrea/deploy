@@ -20,6 +20,9 @@ class HogesController extends AppController
     {
 		error_log(print_r($this->getRequest(), true));
 		error_log(print_r($this->getRequest()->getData(), true));
+		error_log(print_r($this->getRequest()->getParsedBody(), true));
+
+
 		return $this->response = $this->response->withStatus(200);
 
 		// $this->log(env('DATABASE_URL', "not set"));
