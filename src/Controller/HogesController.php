@@ -18,6 +18,7 @@ class HogesController extends AppController
      */
     public function index()
     {
+		$this->log(env('DATABASE_URL', "not set"));
         $this->log("hoge");
 		$hoges = $this->paginate($this->Hoges);
 

@@ -272,7 +272,7 @@ return [
          */
         'default' => [
             'className' => Connection::class,
-            'driver' => Postgres::class,
+            'driver' => Mysql::class,
             'persistent' => false,
             'timezone' => 'Asia/Tokyo',
 
