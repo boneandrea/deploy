@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
-
+use LineBot\LineBot;
 /**
  * Hoges Controller
  *
@@ -14,7 +14,7 @@ class HogesController extends AppController
 {
     public function initialize(): void{
         parent::initialize();
-        $this->loadComponent("LineBot");
+        $this->loadComponent("LineBot.LineBot");
     }
     /**
      * Index method
