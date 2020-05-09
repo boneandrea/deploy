@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace App\Controller;
+use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 
 /**
  * Hoges Controller
@@ -22,7 +23,18 @@ class HogesController extends AppController
      */
     public function index()
     {
-		$json=$this->LineBot->fetch();
+        $event=$this->LineBot->getEvent($json)[0];
+
+        $message=$event["message"]["text"];
+        $replyToken=$event["replyToken"];
+
+        $this->log($replyToken);
+        $this->log($message);
+
+        $textMessageBuilder = new TextMessageBuilder($message." とは何事だ！責任者出てこい！");
+		$this->LineBot->bot->replyMessage($replyToken,$textMessageBuilder);
+        //$this->LineBot->bot->pushMessage($uid, $textMessageBuilder);
+
 		return $this->response = $this->response->withStatus(200);
     }
 
