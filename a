@@ -1,4 +1,0 @@
-CREATE TABLE Joges(
-    id    INTEGER PRIMARY KEY AUTOINCREMENT not null, -- NOT NULLが必要
-    name string NOT NULL
-        );

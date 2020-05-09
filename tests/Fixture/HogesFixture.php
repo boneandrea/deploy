@@ -11,6 +11,12 @@ use Cake\TestSuite\Fixture\TestFixture;
 class HogesFixture extends TestFixture
 {
     /**
+     * Table name
+     *
+     * @var string
+     */
+    public $table = 'Hoges';
+    /**
      * Fields
      *
      * @var array
